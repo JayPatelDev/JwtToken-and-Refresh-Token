@@ -419,10 +419,10 @@ namespace FormulaOneApp.Controllers
             var encodedApiKey = Convert.ToBase64String(Encoding.UTF8.GetBytes($"api:{apiKey}"));
             request.AddParameter("Authorization", $"Basic {encodedApiKey}", ParameterType.HttpHeader);
 
-            request.AddParameter(name: "domain", value: "sandbox85db7fc547244572ae20b21117e7db59.mailgun.org", ParameterType.UrlSegment);
+            request.AddParameter(name: "domain", value: "sandbox", ParameterType.UrlSegment);
             request.Resource= "{domain}/messages";
-            request.AddParameter(name:"from", value: "Jay Patel Sandbox Mailgum <postmaster@sandbox85db7fc547244572ae20b21117e7db59.mailgun.org>");
-            request.AddParameter(name: "to", value: "jaypatel2799.jp@gmail.com");
+            request.AddParameter(name:"from", value: "My sandbox");
+            request.AddParameter(name: "to", value: "acb@gmail.com");
             request.AddParameter(name: "subject", value: "Email verification");
             request.AddParameter(name:"text", value: body);
             request.Method = Method.Post;
